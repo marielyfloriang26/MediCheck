@@ -1,0 +1,3 @@
+El objetivo principal de MediCheck MF es reducir la fricción en el proceso de agendamiento de citas médicas, ofreciendo una interfaz intuitiva, accesible y eficiente. La plataforma permite a los usuarios buscar especialistas, consultar disponibilidad en tiempo real, agendar citas y gestionar su historial médico de manera práctica.
+
+Además del diseño de interfaz y flujo de usuario, este proyecto incluye un estudio riguroso de evaluación de usabilidad y auditoría heurística bajo el estándar internacional ISO/IEC 25010 (Modelo de Calidad del Producto de Software), garantizando altos niveles de operabilidad, accesibilidad y satisfacción de usuario.
