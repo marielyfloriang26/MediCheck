@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCheck - Tu Asistente de Salud</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">⚕</span>
+            <span>Medi<strong>Check MF</strong></span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Doctores</a>
+            <a href="#">Ayuda</a>
+            <a href="#">Blog</a>
+        </div>
+        <div class="nav-auth">
+            <button class="btn-login">Ingresar</button>
+            <button class="btn-signup">Comenzar →</button>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-bg-circle"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Plataforma de Salud Digital
+            </div>
+            <h1>Gestiona tus <span class="highlight">Medicamentos</span><br>y Citas Médicas.</h1>
+            <p>Controla tus recordatorios de medicamentos, agenda citas y mantén tu historial médico organizado en un solo lugar.</p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="document.getElementById('nombre').focus()">Agregar Recordatorio</button>
+                <button class="btn-outline">Ver Historial</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong>1,200+</strong>
+                    <span>Pacientes</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <strong>98%</strong>
+                    <span>Satisfacción</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <strong>24/7</strong>
+                    <span>Disponible</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <div class="hero-image-bg"></div>
+            <img src="assets/fondo-doctora.jpg" alt="Doctora Profesional" class="hero-image">
+            <div class="floating-card card-top">
+                <span class="fc-icon">🩺</span>
+                <div>
+                    <strong>Próxima Cita</strong>
+                    <p>Dr. García — 3:00 PM</p>
+                </div>
+            </div>
+            <div class="floating-card card-bottom">
+                <span class="fc-icon">💊</span>
+                <div>
+                    <strong>Medicamento al día</strong>
+                    <p>3 de 4 tomados hoy</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEARCH / ADD PANEL -->
+    <main class="main-content">
+        <section class="add-panel">
+            <div class="panel-header">
+                <h2>Nuevo <span>Recordatorio</span></h2>
+                <p>Agrega un medicamento a tu rutina diaria</p>
+            </div>
+            <div class="search-bar">
+                <div class="input-group">
+                    <label>Medicamento</label>
+                    <input type="text" id="nombre" placeholder="Ej: Aspirina 100mg">
+                </div>
+                <div class="input-group">
+                    <label>Dosis</label>
+                    <input type="text" id="dosis" placeholder="Ej: 1 tableta">
+                </div>
+                <div class="input-group">
+                    <label>Horario</label>
+                    <input type="time" id="horario">
+                </div>
+                <button class="btn-search" onclick="agregarMedicamento()">
+                    <span>+ Agregar</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- MEDS LIST -->
+        <section class="services-panel">
+            <div class="panel-header">
+                <h2>Medicamentos <span>de Hoy</span></h2>
+                <p>Tu rutina de medicamentos del día</p>
+            </div>
+            <div id="lista-meds" class="med-list-container">
+                <!-- Skeleton placeholder -->
+                <div class="med-card skeleton-card">
+                    <div class="skeleton-icon"></div>
+                    <div class="skeleton-text">
+                        <div class="skeleton-line wide"></div>
+                        <div class="skeleton-line narrow"></div>
+                    </div>
+                </div>
+                <div class="med-card skeleton-card">
+                    <div class="skeleton-icon"></div>
+                    <div class="skeleton-text">
+                        <div class="skeleton-line wide"></div>
+                        <div class="skeleton-line narrow"></div>
+                    </div>
+                </div>
+                <div class="med-card skeleton-card">
+                    <div class="skeleton-icon"></div>
+                    <div class="skeleton-text">
+                        <div class="skeleton-line wide"></div>
+                        <div class="skeleton-line narrow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="quick-services">
+            <div class="panel-header">
+                <h2>Nuestros <span>Servicios</span></h2>
+                <p>Todo lo que necesitas para tu salud</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card primary-card">
+                    <div class="service-icon">🚑</div>
+                    <h3>Emergencias</h3>
+                    <p>Atención inmediata 24/7 para casos urgentes</p>
+                    <a href="#" class="service-link">Saber más →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📅</div>
+                    <h3>Citas Online</h3>
+                    <p>Agenda con los mejores especialistas</p>
+                    <a href="#" class="service-link">Saber más →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎧</div>
+                    <h3>Call Center</h3>
+                    <p>Soporte médico telefónico disponible</p>
+                    <a href="#" class="service-link">Saber más →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Laboratorio</h3>
+                    <p>Resultados de exámenes en línea</p>
+                    <a href="#" class="service-link">Saber más →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="logo">
+                <span class="logo-icon">⚕</span>
+                <span>Medi<strong>Check</strong></span>
+            </div>
+            <p>© 2025 MediCheck. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+@MediCheckApi_HostAddress = http://localhost:5288
+
+GET {{MediCheckApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
